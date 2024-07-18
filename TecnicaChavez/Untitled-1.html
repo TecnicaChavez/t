@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnica Chavez</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #211b74;
+            padding: 10px 20px;
+        }
+        .logo {
+            height: 50px;
+        }
+        .nav {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav li {
+            margin-left: 20px;
+            position: relative;
+        }
+        .nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .info, .contact-container, .form-container {
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .info h2, .contact-container h2, .form-container h2 {
+            color: #000000;
+            font-size: 28px;
+        }
+        .info p, .contact-container p, .form-container label {
+            color: #666;
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-container label {
+            text-align: left;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-container input, .form-container textarea, .form-container select, .form-container button {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #000000;
+            border-radius: 4px;
+        }
+        .form-container input, .form-container textarea, .form-container select {
+            height: 50px; /* Aumenta la altura */
+        }
+        .form-container textarea {
+            height: 150px; /* Aumenta la altura */
+        }
+        .form-container button {
+            background-color: #211b74;
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 4px;
+        }
+        .form-container button:hover {
+            background-color: #333;
+        }
+    </style>
+    <script>
+        function showSection(section) {
+            document.querySelector('.hero').style.display = 'none';
+            document.querySelector('.info').style.display = 'none';
+            document.querySelector('.contact-container').style.display = 'none';
+            document.querySelector('.form-container').style.display = 'none';
+            document.querySelector(section).style.display = 'block';
+        }
+
+        function showInicio() {
+            document.querySelector('.hero').style.display = 'block';
+            document.querySelector('.info').style.display = 'block';
+            document.querySelector('.contact-container').style.display = 'none';
+            document.querySelector('.form-container').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="javascript:void(0)" onclick="showInicio()">
+                <img src="cth solo (2).png" alt="Logo de la Empresa" class="logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav">
+                <li><a href="javascript:void(0)" onclick="showInicio()">Inicio</a></li>
+                <li><a href="javascript:void(0)" onclick="showSection('.contact-container')">Contacto</a></li>
+                <li><a href="javascript:void(0)" onclick="showSection('.form-container')">Agendar Servicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <img src="portada face cth (1).jpg" alt="Portada" style="width: 100%; height: auto;">
+    </div>
+
+    <section class="info">
+        <h2>Bienvenidos a Técnica Chávez</h2>
+        <p>Con más de 30 años de experiencia en la reparación de electrodomésticos de línea blanca, somos su mejor opción para mantener sus equipos funcionando como nuevos.</p>
+        <p>Nuestro equipo de técnicos altamente capacitados se dedica a ofrecer un servicio de calidad y eficiencia, asegurando que cada reparación se realice con los más altos estándares.</p>
+        <p>Brindamos un excelente servicio al cliente y nos enorgullecemos de ofrecer una garantía en todos nuestros trabajos, para que tenga la tranquilidad de que su electrodoméstico está en las mejores manos.</p>
+    </section>
+
+    <div class="contact-container">
+        <h2>Contacto</h2>
+        <p>Av Antonio Diaz Soto y Gama 878, Rancho Nuevo, 44240 Guadalajara, Jal.</p>
+        <p>Tel: 3336748826 - 3333353578</p>
+        <p>Cel: 3310424886</p>
+        <p>Correo: <a href="mailto:TecnicaChavez@gmail.com">TecnicaChavez@gmail.com</a></p>
+    </div>
+
+    <div class="form-container">
+        <h2>Agendar Servicio</h2>
+        <form action="https://formspree.io/f/xwpepzvl" method="post">
+            <input type="hidden" name="_replyto" value="diego.388436@gmail.com">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio" required>
+            
+            <label for="cruzamientos">Cruzamientos:</label>
+            <input type="text" id="cruzamientos" name="cruzamientos" required>
+            
+            <label for="colonia">Colonia:</label>
+            <input type="text" id="colonia" name="colonia" required>
+            
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            
+            <label for="garantia">¿El electrodoméstico cuenta con garantía en nuestra empresa?</label>
+            <select id="garantia" name="garantia" required>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+            
+            <label for="problema">Breve explicación del problema:</label>
+            <textarea id="problema" name="problema" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

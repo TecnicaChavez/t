@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Servicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .form-container h2 {
+            color: #d71e1e;
+            font-size: 28px;
+        }
+        .form-container label, .form-container input, .form-container textarea, .form-container select, .form-container button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .form-container button {
+            background-color: #333;
+            color: #ffd700;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Agendar Servicio</h2>
+        <form action="https://formspree.io/f/xwpepzvl" method="post">
+            <input type="hidden" name="_replyto" value="diego.388436@gmail.com">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio" required>
+            
+            <label for="cruzamientos">Cruzamientos:</label>
+            <input type="text" id="cruzamientos" name="cruzamientos" required>
+            
+            <label for="colonia">Colonia:</label>
+            <input type="text" id="colonia" name="colonia" required>
+            
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            
+            <label for="garantia">¿El electrodoméstico cuenta con garantía en nuestra empresa?</label>
+            <select id="garantia" name="garantia" required>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+            
+            <label for="problema">Breve explicación del problema:</label>
+            <textarea id="problema" name="problema" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
